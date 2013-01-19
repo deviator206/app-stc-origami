@@ -22,7 +22,7 @@ WinnerScreen.prototype.setUp = function()
 	
 	sContentHTML += '<div >';	
 				sContentHTML += '<div id="winner_screen_img_holder" style="width:839px; height:470px;margin-top: 50px;margin-left: 25px;"></div><br/>';	
-				sContentHTML += '<div id= "learn_more" class="clickButton clickHereMore_Hack">Click here to learn more!</div>';
+				sContentHTML += '<div id= "learn_more" class="clickButton clickHereMore_Hack">Click here to Play again</div>';
 		sContentHTML += '</div>';
 			
 			document.getElementById(this.mDivName).innerHTML =sContentHTML;
