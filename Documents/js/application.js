@@ -28,6 +28,7 @@ ApplicationWrapper.prototype.nextTransition = function() {
 		case 50:
 			//how to play
 			this.nGameState = 51;
+			this.resetVariables();
 			this.mCurrentScreen = new GameOpeningPage(this)
 			document.getElementById(this.mCurrentScreen.mDivName).style.opacity =0;
 			$('#' + this.mCurrentScreen.mDivName).fadeTo('slow',1);
@@ -86,7 +87,7 @@ ApplicationWrapper.prototype.startTheGamePlay = function() {
 	if (this.nQuestionIndex < this.arrLevelTotalQuestion[this.nLevelCounter]) {
 		this.nQuestionIndex++;
 		this.nGameState = 70;
-		console.log(" NEXT TRAN:[ startTheGamePlay ]");
+		//console.log(" NEXT TRAN:[ startTheGamePlay ]");
 		this.nextTransition();
 
 	} else {
@@ -96,7 +97,7 @@ ApplicationWrapper.prototype.startTheGamePlay = function() {
 		if (this.nLevelCounter <= this.arrLevelTotalQuestion.length - 1) {
 
 			this.nGameState = 110;
-			console.log(" NEXT TRAN:[ startTheGamePlay2 ]");
+			//console.log(" NEXT TRAN:[ startTheGamePlay2 ]");
 			this.nextTransition();
 			//this.nLevelCounter++;
 			//this.nQuestionIndex =0;
@@ -104,7 +105,7 @@ ApplicationWrapper.prototype.startTheGamePlay = function() {
 
 		} else {
 			this.nGameState = 110;
-			console.log(" NEXT TRAN:[ startTheGamePlay3 ]");
+			//console.log(" NEXT TRAN:[ startTheGamePlay3 ]");
 			this.nextTransition();
 
 		}
@@ -134,7 +135,7 @@ ApplicationWrapper.prototype.startGameTimer = function(i) {
 		if (that.nQuizTimeCntr <= 0) {
 			clearInterval(that.nQuizTimer)
 			that.nGameState = 130;
-			console.log(" NEXT TRAN:[ startTheGamePlay56 ]");
+			//console.log(" NEXT TRAN:[ startTheGamePlay56 ]");
 			that.nextTransition()
 		}
 		document.getElementById('timer_txt').innerHTML = '' + that.nQuizTimeCntr;
@@ -149,7 +150,7 @@ ApplicationWrapper.prototype.answerSelected = function(nSelected) {
 	if (nSelected == objContent[this.nQuestionIndex].correct_answer) {
 		this.nQuizScore = this.nQuizScore + this.nCorrectAnswer
 		this.nGameState = 100;
-		console.log(" NEXT TRAN:[ startTheGamePlay fds]");
+		//console.log(" NEXT TRAN:[ startTheGamePlay fds]");
 		this.nextTransition();
 	} else {
 		this.nGameState = 70;
@@ -160,6 +161,12 @@ ApplicationWrapper.prototype.answerSelected = function(nSelected) {
 	}
 
 }
+ApplicationWrapper.prototype.resetVariables = function() {
+	
+this.nQuestionIndex = 0;
+	this.nLevelCounter = 1;
+}
+	
 ApplicationWrapper.prototype.showSelectedScreen = function(sDivName) {
 	document.getElementById(sDivName).style.display = "block";
 }
@@ -194,6 +201,7 @@ function ApplicationWrapper() {
 
 	//game-logic-params
 	this.nQuestionIndex = 0;
+	this.nLevelCounter = 1;
 	this.nQuizTimer = 0;
 	this.nQuizTimeCntr = 120;
 	this.nQuizScore = 0;
@@ -204,6 +212,7 @@ function ApplicationWrapper() {
 	this.arrQuestion = null;
 	DOMWrapper = this;
 	this.imgArray = {}
+	this.playBirdAnimation = false;
 	this.jsAnimManager = new jsAnimManager(10);
 	return this;
 }

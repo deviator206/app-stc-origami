@@ -356,6 +356,12 @@ textarea[contenteditable] {
 	cursor: pointer;
 }
 
+
+.gameplaybackButton
+{
+	margin-left: 15px;
+	width: 76px!Important;
+}
 .backButton:hover {
 	background-color: #666;
 	color: #FFF;
@@ -737,7 +743,7 @@ cursor: pointer;
 	text-align:center;
 	padding-top:78px;
 	font-style:24px;
-	opacity: 0.95;
+	
 	
 }
 
@@ -755,9 +761,17 @@ color: white;
 	
 }
 
+
+.playagain_button_ongame_end
+{
+	margin-top: -190px!Important;
+	width: 120px!Important;
+	margin-left: 120px!Important;
+}
+
 #loadingMessage
 {
-	margin-left: 115px;
+	margin-left: 94px;
 	font-size: 25px;
 }
 .endNormal

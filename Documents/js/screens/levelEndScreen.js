@@ -153,14 +153,15 @@ function closeOverlay()
 	}
 	function showOverlay()
 	{
+		var imgLinkName = new Array('','Humming.jpg','Eagle.jpg','Albatross.jpg','Weaver.jpg')
 		//console.log("SHOW "+document.getElementById('opaqueScreen').innerHTML)
 		//if(document.getElementById('opaqueScreen').innerHTML == '-1')
-		{
-			var sT = getAssetPath("img","images/close-image.jpg");
-			var sContent = '<img src="'+sT+'" height="100%" />'
+		//{
+			var sT = getAssetPath("img","images/birds/"+imgLinkName[_gMainApplication.nLevelCounter]);
+			var sContent = '<img src="'+sT+'" height="100%" width="80%"/>'
 			//console.log(" sContent :: "+ sContent);
 			document.getElementById('opaqueScreen').innerHTML = sContent;
-		}
+		//}
 		
 		
 		document.getElementById('opaqueScreen_bg').style.display ="block";
@@ -170,8 +171,10 @@ function closeOverlay()
 		document.getElementById('clickOverlayClose').innerHTML ="<u>Close X </u>"
 		document.getElementById('download_link').innerHTML ="<u>Download the Image</u>"
 		
+		
 		document.getElementById('download_link').onclick = function()
 		{
+			var imgLinkName = new Array('','Humming.jpg','Eagle.jpg','Albatross.jpg','Weaver.jpg')
 			/*
 			var sImageURL = _gMainApplication.imgArray['humming_bird_image'].src //getAssetPath("img","images/close-image.png");
 			var newPath = String(document.location.href)
@@ -184,7 +187,7 @@ function closeOverlay()
 			*/
 			var newPath = String(document.location.href)
 			newPath =  newPath.split('/Pages/')[0];
-			newPath += "/PublishingImages/origami/images/humming_bird.jpg"
+			newPath += "/PublishingImages/origami/images/birds/"+imgLinkName[_gMainApplication.nLevelCounter]
 			window.open(newPath,"_blank");
 		}
 		

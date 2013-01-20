@@ -63,7 +63,7 @@ HowToPlayScreen.prototype.setUp = function()
 	//var sT = getAssetPath("img","img/images/image3.png")
 	document.getElementById('how_to_play_back_btn').onclick= function()
 	{
-		that.mApplication.setGameState(20);
+		that.mApplication.setGameState(50);
 		that.mApplication.nextTransition();
 	};
 	

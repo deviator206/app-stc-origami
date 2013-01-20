@@ -14,7 +14,7 @@ function LoadingScreen(app) {
 LoadingScreen.prototype.setUp = function() {
 
 	this.mApplication.showScreen(this.mDivName)
-	document.getElementById('loadingScreen').innerHTML = '<div id="loadingScreen_front" style="width: 240px;height: 270px;"></div><div id="loadingMessage"></div>'
+	document.getElementById('loadingScreen').innerHTML = '<div id="loadingScreen_front" style="width: 240px;height: 240px;"></div><div id="loadingMessage"></div>'
 
 	/*var sT = getAssetPath("img", "splash/whiteProgBar.png")
 	 for (var i = 0; i < 25; i++) {
@@ -34,7 +34,7 @@ LoadingScreen.prototype.setUp = function() {
 	this.mGameSplashLoader = new PxLoader();
 	this.mGameAssetLoader = new PxLoader();
 
-	console.log(":PX:" + this.mGameAssetLoader);
+	//console.log(":PX:" + this.mGameAssetLoader);
 	this.mGameAssetLoader.addImage(getAssetPath("img", "images/blue.png"));
 	this.mApplication.imgArray = {};
 	this.mApplication.imgArray['images_congratsEnd'] = this.mGameAssetLoader.addImage(getAssetPath("img", "images/congratsEnd.png"));
@@ -187,7 +187,7 @@ LoadingScreen.prototype.splashAssetLoaded = function() {
 	document.getElementById('appContainer').style.display = "block"
 	document.getElementById('loading_script_tags').style.display = "none"
 	document.getElementById('loadingScreen_front').appendChild(this.mApplication.imgArray['loader_1']);
-	this.mApplication.imgArray['loader_1' ].style.width ="150%";
+	this.mApplication.imgArray['loader_1' ].style.width ="135%";
 			this.mApplication.imgArray['loader_1' ].style.height ="100%";
 	
 	document.getElementById('loadingMessage').innerHTML ="Loading 0%"
@@ -225,7 +225,7 @@ LoadingScreen.prototype.gameAssetLoadingProgress = function(e) {
 				document.getElementById('loadingScreen_front').removeChild(document.getElementById('loadingScreen_front').lastChild);
 			}
 			document.getElementById('loadingScreen_front').appendChild(this.mApplication.imgArray['loader_' + nNum]);
-			this.mApplication.imgArray['loader_' + nNum].style.width ="150%";
+			this.mApplication.imgArray['loader_' + nNum].style.width ="135%";
 			this.mApplication.imgArray['loader_' + nNum].style.height ="100%";
 			
 		}

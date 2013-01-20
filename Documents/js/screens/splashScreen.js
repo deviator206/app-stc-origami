@@ -82,6 +82,7 @@ SplashScreen.prototype.setUp = function()
 				
 	document.getElementById('intro_play_now').onclick= function()
 	{
+		that.mApplication.playBirdAnimation = true;
 		that.mApplication.setGameState(50);
 		that.mApplication.nextTransition();
 	};

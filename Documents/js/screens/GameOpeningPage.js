@@ -30,7 +30,7 @@ GameOpeningPage.prototype.animatePeacock = function() {
 		to : new Pos(300, 350),
 		duration : 2000,
 		onComplete : function() {
-			console.log(" FINAL ");
+			//console.log(" FINAL ");
 			$('#anim_content_text').fadeTo('slow', 1);
 			$('#how_to_play_back_btn_1').fadeTo('slow', 1);
 			$('#how_to_play_play_now_1').fadeTo('slow', 1);
@@ -63,23 +63,28 @@ GameOpeningPage.prototype.setUp = function() {
 	 document.getElementById('bird_4').appendChild(this.mApplication.imgArray['level_Anim_image4']);
 	 */
 	document.getElementById('main_P').appendChild(this.mApplication.imgArray['images_congratsEnd']);
-
-	this.timerObject = setInterval(function() {
-		if (that.animCounter < 24) {
-			while (document.getElementById('birds_animation').firstChild) {
-				document.getElementById('birds_animation').removeChild(document.getElementById('birds_animation').firstChild);
+	if (that.mApplication.playBirdAnimation) {
+		this.timerObject = setInterval(function() {
+			if (that.animCounter < 24) {
+				while (document.getElementById('birds_animation').firstChild) {
+					document.getElementById('birds_animation').removeChild(document.getElementById('birds_animation').firstChild);
+				}
+				document.getElementById('birds_animation').appendChild(that.mApplication.imgArray['anim_image' + that.animCounter]);
+				that.animCounter++;
+			} else {
+				while (document.getElementById('birds_animation').firstChild) {
+					document.getElementById('birds_animation').removeChild(document.getElementById('birds_animation').firstChild);
+				}
+				clearInterval(that.timerObject);
+				that.animatePeacock();
 			}
-			document.getElementById('birds_animation').appendChild(that.mApplication.imgArray['anim_image' + that.animCounter]);
-			that.animCounter++;
-		} else {
-			while (document.getElementById('birds_animation').firstChild) {
-				document.getElementById('birds_animation').removeChild(document.getElementById('birds_animation').firstChild);
-			}
-			clearInterval(that.timerObject);
-			that.animatePeacock();
-		}
-		//console.log(" TIER : "+that.animCounter);
-	}, 100);
+			//console.log(" TIER : "+that.animCounter);
+		}, 100);
+		that.mApplication.playBirdAnimation = false;
+	} else {
+		
+		that.animatePeacock();
+	}
 
 	//var sT = getAssetPath("img","img/images/image3.png")
 	document.getElementById('how_to_play_back_btn_1').onclick = function() {
