@@ -153,7 +153,7 @@ function closeOverlay()
 	}
 	function showOverlay()
 	{
-		var imgLinkName = new Array('','Humming.jpg','Eagle.jpg','Albatross.jpg','Weaver.jpg')
+		var imgLinkName = new Array('','Humming.png','Eagle.png','Albatross.png','Weaver.png')
 		//console.log("SHOW "+document.getElementById('opaqueScreen').innerHTML)
 		//if(document.getElementById('opaqueScreen').innerHTML == '-1')
 		//{
@@ -174,7 +174,7 @@ function closeOverlay()
 		
 		document.getElementById('download_link').onclick = function()
 		{
-			var imgLinkName = new Array('','Humming.jpg','Eagle.jpg','Albatross.jpg','Weaver.jpg')
+			var imgLinkName = new Array('','Humming.png','Eagle.png','Albatross.png','Weaver.png')
 			/*
 			var sImageURL = _gMainApplication.imgArray['humming_bird_image'].src //getAssetPath("img","images/close-image.png");
 			var newPath = String(document.location.href)
