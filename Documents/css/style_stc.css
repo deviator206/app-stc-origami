@@ -771,8 +771,10 @@ color: white;
 
 #loadingMessage
 {
-	margin-left: 94px;
+	
+	margin-left: 110px;
 	font-size: 25px;
+	margin-top: -30px
 }
 .endNormal
 {

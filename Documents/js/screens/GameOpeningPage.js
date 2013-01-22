@@ -65,7 +65,7 @@ GameOpeningPage.prototype.setUp = function() {
 	document.getElementById('main_P').appendChild(this.mApplication.imgArray['images_congratsEnd']);
 	if (that.mApplication.playBirdAnimation) {
 		this.timerObject = setInterval(function() {
-			if (that.animCounter < 24) {
+			if (that.animCounter < 25) {
 				while (document.getElementById('birds_animation').firstChild) {
 					document.getElementById('birds_animation').removeChild(document.getElementById('birds_animation').firstChild);
 				}

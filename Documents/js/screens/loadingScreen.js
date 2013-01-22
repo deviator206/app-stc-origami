@@ -85,13 +85,14 @@ LoadingScreen.prototype.setUp = function() {
 	*/
 	
 	var nTIndex =0;
-	for(nTIndex=0;nTIndex<24;nTIndex++)
+	for(nTIndex=0;nTIndex<25;nTIndex++)
 	{
 		var nN = nTIndex +2;
 		if(nN < 10)
 		nN= "0"+nN;
 		
 		var nN1 = nTIndex +1;
+		console.log("levelend_images/100"+nN1);
 		this.mApplication.imgArray['anim_image'+nN1] = this.mGameAssetLoader.addImage(getAssetPath("img", "levelend_images/100"+nN+".png"));	
 	}
 	
@@ -187,8 +188,8 @@ LoadingScreen.prototype.splashAssetLoaded = function() {
 	document.getElementById('appContainer').style.display = "block"
 	document.getElementById('loading_script_tags').style.display = "none"
 	document.getElementById('loadingScreen_front').appendChild(this.mApplication.imgArray['loader_1']);
-	this.mApplication.imgArray['loader_1' ].style.width ="135%";
-			this.mApplication.imgArray['loader_1' ].style.height ="100%";
+	//this.mApplication.imgArray['loader_1' ].style.width ="135%";
+		//	this.mApplication.imgArray['loader_1' ].style.height ="100%";
 	
 	document.getElementById('loadingMessage').innerHTML ="Loading 0%"
 	this.mGameAssetLoader.start();
@@ -225,8 +226,8 @@ LoadingScreen.prototype.gameAssetLoadingProgress = function(e) {
 				document.getElementById('loadingScreen_front').removeChild(document.getElementById('loadingScreen_front').lastChild);
 			}
 			document.getElementById('loadingScreen_front').appendChild(this.mApplication.imgArray['loader_' + nNum]);
-			this.mApplication.imgArray['loader_' + nNum].style.width ="135%";
-			this.mApplication.imgArray['loader_' + nNum].style.height ="100%";
+			//this.mApplication.imgArray['loader_' + nNum].style.width ="135%";
+			//this.mApplication.imgArray['loader_' + nNum].style.height ="100%";
 			
 		}
 
