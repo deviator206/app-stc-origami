@@ -92,7 +92,7 @@ LoadingScreen.prototype.setUp = function() {
 		nN= "0"+nN;
 		
 		var nN1 = nTIndex +1;
-		console.log("levelend_images/100"+nN1);
+		//console.log("levelend_images/100"+nN1);
 		this.mApplication.imgArray['anim_image'+nN1] = this.mGameAssetLoader.addImage(getAssetPath("img", "levelend_images/100"+nN+".png"));	
 	}
 	
