@@ -25,12 +25,20 @@ GameOpeningPage.prototype.animatePeacock = function() {
 	that.mApplication.jsAnimManager.registerPosition("main_P");
 	that.arrAnim[that.animCounter].setPosition(1000, 350);
 	that.arrAnimObject[that.animCounter] = that.mApplication.jsAnimManager.createAnimObject("main_P");
+	//$('#anim_content_text').hide();
+	//		$('#how_to_play_back_btn_1').hide();
+	//		$('#how_to_play_play_now_1').hide();
+			
 	that.arrAnimObject[that.animCounter].add({
 		property : Prop.position,
 		to : new Pos(300, 350),
 		duration : 2000,
 		onComplete : function() {
 			//console.log(" FINAL ");
+			/*$('#anim_content_text').show('slow');
+			$('#how_to_play_back_btn_1').show('slow');
+			$('#how_to_play_play_now_1').show('slow');
+				*/		
 			$('#anim_content_text').fadeTo('slow', 1);
 			$('#how_to_play_back_btn_1').fadeTo('slow', 1);
 			$('#how_to_play_play_now_1').fadeTo('slow', 1);
