@@ -1938,13 +1938,13 @@ SplashScreen.prototype.setUp = function() {
 				a += '<p class="introparaLeft" style="margin-top: 19px!important;line-height: 27px;">';
 					a += 'Each pillar conveys a distinct, strategic imperative and the <br />';
 					a += 'four pillars contribute to the evolution of a High<br />';
-					a += 'Performance Nation- represented by four birds riding on the<br />';
+					a += 'Performance Nation&ndash;represented by four birds riding on the<br />';
 					a += 'back of the Peacock, the nationalbird of India.';
 				a += '</p>';
                 a += '<p class="introparaLeft" style="line-height: 27px;">';
 					a += 'India: A Flight of Ideas celebrates this journey Join the<br />';
 					a += 'adventure by answering questions that will help create the<br />';
-					a += 'four origami birds, which descends on the Peacock- creating<br />';
+					a += 'four origami birds, which descends on the Peacock&ndash;creating<br />';
 					a += 'a unified vision of our High Performance Nation';
 				a += '</p>';
                 a += '<div  id= "intro_play_now" class="playButton">Play now</div>';
